@@ -202,6 +202,7 @@ mixin _$UserResponse {
   String get email => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
+  String? get avatar => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
   List<String> get roles => throw _privateConstructorUsedError;
@@ -223,6 +224,7 @@ abstract class $UserResponseCopyWith<$Res> {
       String email,
       String username,
       String firstName,
+      String? avatar,
       String lastName,
       bool isActive,
       List<String> roles});
@@ -245,6 +247,7 @@ class _$UserResponseCopyWithImpl<$Res, $Val extends UserResponse>
     Object? email = null,
     Object? username = null,
     Object? firstName = null,
+    Object? avatar = freezed,
     Object? lastName = null,
     Object? isActive = null,
     Object? roles = null,
@@ -266,6 +269,10 @@ class _$UserResponseCopyWithImpl<$Res, $Val extends UserResponse>
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
@@ -295,6 +302,7 @@ abstract class _$$_UserResponseCopyWith<$Res>
       String email,
       String username,
       String firstName,
+      String? avatar,
       String lastName,
       bool isActive,
       List<String> roles});
@@ -315,6 +323,7 @@ class __$$_UserResponseCopyWithImpl<$Res>
     Object? email = null,
     Object? username = null,
     Object? firstName = null,
+    Object? avatar = freezed,
     Object? lastName = null,
     Object? isActive = null,
     Object? roles = null,
@@ -336,6 +345,10 @@ class __$$_UserResponseCopyWithImpl<$Res>
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
@@ -360,6 +373,7 @@ class _$_UserResponse implements _UserResponse {
       required this.email,
       required this.username,
       required this.firstName,
+      this.avatar,
       required this.lastName,
       required this.isActive,
       required final List<String> roles})
@@ -377,6 +391,8 @@ class _$_UserResponse implements _UserResponse {
   @override
   final String firstName;
   @override
+  final String? avatar;
+  @override
   final String lastName;
   @override
   final bool isActive;
@@ -390,7 +406,7 @@ class _$_UserResponse implements _UserResponse {
 
   @override
   String toString() {
-    return 'UserResponse(id: $id, email: $email, username: $username, firstName: $firstName, lastName: $lastName, isActive: $isActive, roles: $roles)';
+    return 'UserResponse(id: $id, email: $email, username: $username, firstName: $firstName, avatar: $avatar, lastName: $lastName, isActive: $isActive, roles: $roles)';
   }
 
   @override
@@ -404,6 +420,7 @@ class _$_UserResponse implements _UserResponse {
                 other.username == username) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.isActive, isActive) ||
@@ -414,7 +431,7 @@ class _$_UserResponse implements _UserResponse {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, email, username, firstName,
-      lastName, isActive, const DeepCollectionEquality().hash(_roles));
+      avatar, lastName, isActive, const DeepCollectionEquality().hash(_roles));
 
   @JsonKey(ignore: true)
   @override
@@ -436,6 +453,7 @@ abstract class _UserResponse implements UserResponse {
       required final String email,
       required final String username,
       required final String firstName,
+      final String? avatar,
       required final String lastName,
       required final bool isActive,
       required final List<String> roles}) = _$_UserResponse;
@@ -451,6 +469,8 @@ abstract class _UserResponse implements UserResponse {
   String get username;
   @override
   String get firstName;
+  @override
+  String? get avatar;
   @override
   String get lastName;
   @override

@@ -24,6 +24,7 @@ mixin _$User {
   String get email => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
+  String? get avatar => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
   List<String> get roles => throw _privateConstructorUsedError;
@@ -43,6 +44,7 @@ abstract class $UserCopyWith<$Res> {
       String email,
       String username,
       String firstName,
+      String? avatar,
       String lastName,
       bool isActive,
       List<String> roles});
@@ -65,6 +67,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? email = null,
     Object? username = null,
     Object? firstName = null,
+    Object? avatar = freezed,
     Object? lastName = null,
     Object? isActive = null,
     Object? roles = null,
@@ -86,6 +89,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
@@ -113,6 +120,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String email,
       String username,
       String firstName,
+      String? avatar,
       String lastName,
       bool isActive,
       List<String> roles});
@@ -131,6 +139,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? email = null,
     Object? username = null,
     Object? firstName = null,
+    Object? avatar = freezed,
     Object? lastName = null,
     Object? isActive = null,
     Object? roles = null,
@@ -152,6 +161,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
@@ -176,6 +189,7 @@ class _$_User implements _User {
       required this.email,
       required this.username,
       required this.firstName,
+      this.avatar,
       required this.lastName,
       required this.isActive,
       required final List<String> roles})
@@ -192,6 +206,8 @@ class _$_User implements _User {
   @override
   final String firstName;
   @override
+  final String? avatar;
+  @override
   final String lastName;
   @override
   final bool isActive;
@@ -205,7 +221,7 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, email: $email, username: $username, firstName: $firstName, lastName: $lastName, isActive: $isActive, roles: $roles)';
+    return 'User(id: $id, email: $email, username: $username, firstName: $firstName, avatar: $avatar, lastName: $lastName, isActive: $isActive, roles: $roles)';
   }
 
   @override
@@ -219,6 +235,7 @@ class _$_User implements _User {
                 other.username == username) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.isActive, isActive) ||
@@ -229,7 +246,7 @@ class _$_User implements _User {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, email, username, firstName,
-      lastName, isActive, const DeepCollectionEquality().hash(_roles));
+      avatar, lastName, isActive, const DeepCollectionEquality().hash(_roles));
 
   @JsonKey(ignore: true)
   @override
@@ -251,6 +268,7 @@ abstract class _User implements User {
       required final String email,
       required final String username,
       required final String firstName,
+      final String? avatar,
       required final String lastName,
       required final bool isActive,
       required final List<String> roles}) = _$_User;
@@ -265,6 +283,8 @@ abstract class _User implements User {
   String get username;
   @override
   String get firstName;
+  @override
+  String? get avatar;
   @override
   String get lastName;
   @override

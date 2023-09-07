@@ -19,6 +19,7 @@ class UserResponse with _$UserResponse {
     required String email,
     required String username,
     required String firstName,
+    String? avatar,
     required String lastName,
     required bool isActive,
     required List<String> roles,

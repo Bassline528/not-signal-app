@@ -2,7 +2,7 @@ import 'package:chatview/chatview.dart';
 
 class Data {
   static const profileImage =
-      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/flutter_showcaseview/master/example/assets/simform.png";
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/flutter_showcaseview/master/example/assets/Simform.png";
   static final messageList = [
     Message(
       id: '1',
@@ -73,7 +73,7 @@ class Data {
     ),
     Message(
       id: '9',
-      message: "Done",
+      message: "Hola",
       createdAt: DateTime.now(),
       sendBy: '1',
       status: MessageStatus.read,
@@ -88,7 +88,7 @@ class Data {
     ),
     Message(
       id: '10',
-      message: "Thank you!!",
+      message: "Gracias!!",
       status: MessageStatus.read,
       createdAt: DateTime.now(),
       sendBy: '1',

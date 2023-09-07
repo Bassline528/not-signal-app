@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:not_signal/core/core.dart';
+import 'package:not_signal/core/helpers/dialog_helpers.dart';
 import 'package:not_signal/features/auth/data/dtos/dtos.dart';
 import 'package:not_signal/features/auth/presentation/providers/providers.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-
-import '../../../../core/helpers/dialog_helpers.dart';
 
 class RegisterScreen extends ConsumerStatefulWidget {
   const RegisterScreen({super.key});
@@ -215,6 +215,7 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
       if (next.status == AuthStatus.authenticated) {
         Loader.hide();
         context.showSnackBar('Register Successful', type: SnackbarType.success);
+        ref.read(appRouterProvider).go('/');
       }
 
       if (next.status == AuthStatus.checking) {

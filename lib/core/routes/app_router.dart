@@ -3,6 +3,7 @@ import 'package:not_signal/features/chats/presentation/screens/new_chat_screen.d
 import 'package:not_signal/features/chats/presentation/screens/private_chat_screen.dart';
 import 'package:not_signal/features/auth/presentation/screens/screens.dart';
 import 'package:not_signal/features/home/presentation/screens/home_screen.dart';
+import 'package:not_signal/features/home/presentation/screens/profile_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_router.g.dart';
@@ -24,6 +25,13 @@ GoRouter appRouter(AppRouterRef ref) {
         path: '/',
         name: 'home',
         builder: (context, state) => HomeScreen(),
+        routes: [
+          GoRoute(
+            path: 'profile',
+            name: 'profile',
+            builder: (context, state) => const ProfileScreen(),
+          ),
+        ],
       ),
       GoRoute(
         path: '/new-message',

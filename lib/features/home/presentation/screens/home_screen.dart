@@ -13,16 +13,35 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final screens = <Widget>[ChatsScreen(), CallsScreen()];
+    final currentUser = ref.watch(authProvider).user;
 
     final navigation = ref.watch(navigationProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           children: [
-            CircleAvatar(),
-            SizedBox(width: 20),
-            Text(
+            GestureDetector(
+              onTap: () {
+                context.push('/profile');
+              },
+              child: CircleAvatar(
+                child: currentUser?.avatar != null
+                    ? ClipRRect(
+                        child: Image.network(
+                          currentUser!.avatar!,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          100,
+                        ),
+                      )
+                    : Text(
+                        '${currentUser!.firstName[0]}${currentUser.lastName[0]}',
+                      ),
+              ),
+            ),
+            const SizedBox(width: 20),
+            const Text(
               'Not Signal',
               style: TextStyle(
                 fontWeight: FontWeight.bold,

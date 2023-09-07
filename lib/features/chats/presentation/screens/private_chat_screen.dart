@@ -61,7 +61,7 @@ class PrivateChatScreen extends StatelessWidget {
           elevation: 0,
           backGroundColor: theme.colorScheme.surface,
           profilePicture: Data.profileImage,
-          chatTitle: "Tito",
+          chatTitle: "Consulta",
           userStatus: 'Online',
           chatTitleTextStyle: context.textTheme.headlineSmall,
           actions: [
