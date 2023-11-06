@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
 import 'package:not_signal/core/constants/api_constants.dart';
 import 'package:not_signal/core/exceptions/auth_exception.dart';
 import 'package:not_signal/core/services/services.dart';
 import 'package:not_signal/features/auth/data/dtos/dtos.dart';
 import 'package:not_signal/features/auth/data/mappers/login_response.dart';
-import 'package:get_it/get_it.dart';
-import 'package:injectable/injectable.dart';
 
 GetIt getIt = GetIt.instance;
 

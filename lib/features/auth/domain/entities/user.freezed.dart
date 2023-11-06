@@ -26,7 +26,6 @@ mixin _$User {
   String get firstName => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
-  bool get isActive => throw _privateConstructorUsedError;
   List<String> get roles => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,7 +45,6 @@ abstract class $UserCopyWith<$Res> {
       String firstName,
       String? avatar,
       String lastName,
-      bool isActive,
       List<String> roles});
 }
 
@@ -69,7 +67,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? firstName = null,
     Object? avatar = freezed,
     Object? lastName = null,
-    Object? isActive = null,
     Object? roles = null,
   }) {
     return _then(_value.copyWith(
@@ -97,10 +94,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
       roles: null == roles
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -122,7 +115,6 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String firstName,
       String? avatar,
       String lastName,
-      bool isActive,
       List<String> roles});
 }
 
@@ -141,7 +133,6 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? firstName = null,
     Object? avatar = freezed,
     Object? lastName = null,
-    Object? isActive = null,
     Object? roles = null,
   }) {
     return _then(_$_User(
@@ -169,10 +160,6 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
       roles: null == roles
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -191,7 +178,6 @@ class _$_User implements _User {
       required this.firstName,
       this.avatar,
       required this.lastName,
-      required this.isActive,
       required final List<String> roles})
       : _roles = roles;
 
@@ -209,8 +195,6 @@ class _$_User implements _User {
   final String? avatar;
   @override
   final String lastName;
-  @override
-  final bool isActive;
   final List<String> _roles;
   @override
   List<String> get roles {
@@ -221,7 +205,7 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, email: $email, username: $username, firstName: $firstName, avatar: $avatar, lastName: $lastName, isActive: $isActive, roles: $roles)';
+    return 'User(id: $id, email: $email, username: $username, firstName: $firstName, avatar: $avatar, lastName: $lastName, roles: $roles)';
   }
 
   @override
@@ -238,15 +222,13 @@ class _$_User implements _User {
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
             const DeepCollectionEquality().equals(other._roles, _roles));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, email, username, firstName,
-      avatar, lastName, isActive, const DeepCollectionEquality().hash(_roles));
+      avatar, lastName, const DeepCollectionEquality().hash(_roles));
 
   @JsonKey(ignore: true)
   @override
@@ -270,7 +252,6 @@ abstract class _User implements User {
       required final String firstName,
       final String? avatar,
       required final String lastName,
-      required final bool isActive,
       required final List<String> roles}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
@@ -287,8 +268,6 @@ abstract class _User implements User {
   String? get avatar;
   @override
   String get lastName;
-  @override
-  bool get isActive;
   @override
   List<String> get roles;
   @override

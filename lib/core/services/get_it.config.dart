@@ -16,6 +16,10 @@ import '../../features/auth/data/datasources/auth_data_source.dart' as _i7;
 import '../../features/auth/data/repositories/auth_repository_impl.dart'
     as _i10;
 import '../../features/auth/domain/repositories/auth_repository.dart' as _i9;
+import '../../features/chats/data/data_sources/chat_data_source.dart' as _i11;
+import '../../features/chats/data/repositories/chat_repository_impl.dart'
+    as _i13;
+import '../../features/chats/domain/repositories/chat_repository.dart' as _i12;
 import '../../features/shared/domain/services/key_value_storage_service.dart'
     as _i5;
 import '../../features/shared/domain/services/key_value_storage_service_impl.dart'
@@ -42,6 +46,10 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i7.AuthDataSource>(() => _i7.AuthService(gh<_i8.DioClient>()));
     gh.factory<_i9.AuthRepository>(
         () => _i10.AuthRepositoryImpl(gh<_i7.AuthDataSource>()));
+    gh.factory<_i11.ChatDataSource>(
+        () => _i11.ChatDataSourceImpl(gh<_i4.DioClient>()));
+    gh.factory<_i12.ChatRepository>(
+        () => _i13.ChatRepositoryImp(gh<_i11.ChatDataSource>()));
     return this;
   }
 }

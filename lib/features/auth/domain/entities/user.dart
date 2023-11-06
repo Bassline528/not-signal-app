@@ -11,7 +11,6 @@ class User with _$User {
     required String firstName,
     String? avatar,
     required String lastName,
-    required bool isActive,
     required List<String> roles,
   }) = _User;
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

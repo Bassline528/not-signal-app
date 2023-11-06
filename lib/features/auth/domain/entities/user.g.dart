@@ -13,7 +13,6 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       firstName: json['firstName'] as String,
       avatar: json['avatar'] as String?,
       lastName: json['lastName'] as String,
-      isActive: json['isActive'] as bool,
       roles: (json['roles'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
@@ -24,6 +23,5 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'firstName': instance.firstName,
       'avatar': instance.avatar,
       'lastName': instance.lastName,
-      'isActive': instance.isActive,
       'roles': instance.roles,
     };
